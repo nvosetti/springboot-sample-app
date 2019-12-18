@@ -6,7 +6,7 @@ pipeline {
         stage('BuildinDevelopment') {
             steps {
                 sh 'oc delete all --selector app=springboot-sample-app -n dev'
-                sh 'oc new-app codecentric/springboot-maven3-centos~https://github.com/codecentric/springboot-sample-app  -n dev'
+                sh 'oc new-app codecentric/springboot-maven3-centos~https://github.com/nvosetti/springboot-sample-app  -n dev'
 				        sh 'oc expose service springboot-sample-app  -n dev'
             }
         }
@@ -20,7 +20,7 @@ pipeline {
         stage('BuildinQA') {
             steps {
                 sh 'oc delete all --selector app=springboot-sample-app -n qa'
-                sh 'oc new-app codecentric/springboot-maven3-centos~https://github.com/codecentric/springboot-sample-app  -n qa'
+                sh 'oc new-app codecentric/springboot-maven3-centos~https://github.com/nvosetti/springboot-sample-app  -n qa'
 				        sh 'oc expose service springboot-sample-app  -n qa'
             }
         }
@@ -39,7 +39,7 @@ pipeline {
         stage('BuildinProd') {
             steps {
                 sh 'oc delete all --selector app=springboot-sample-app -n prod'
-                sh 'oc new-app codecentric/springboot-maven3-centos~https://github.com/codecentric/springboot-sample-app  -n prod'
+                sh 'oc new-app codecentric/springboot-maven3-centos~https://github.com/nvosetti/springboot-sample-app  -n prod'
 				        sh 'oc expose service springboot-sample-app  -n prod'
             }
         }
