@@ -12,7 +12,7 @@ pipeline {
         }
         stage('TestinginDevelopment') {
             steps {
-                sh 'sleep 120'
+                sh 'sleep 70'
 				sh 'wget -q "http://springboot-sample-app-dev.apps.usadkub01.cotiviti.com" -O /dev/null'
 			    sh 'if [ $? == "0" ]; then echo "OK"; else echo "Failed";fi'
             }
@@ -26,7 +26,7 @@ pipeline {
         }
         stage('TestinginQA') {
             steps {
-                sh 'sleep 120'
+                sh 'sleep 70'
 				sh 'wget -q "http://springboot-sample-app-qa.apps.usadkub01.cotiviti.com" -O /dev/null'
 			    sh 'if [ $? == "0" ]; then echo "OK"; else echo "Failed";fi'
             }
@@ -45,7 +45,7 @@ pipeline {
         }
         stage('TestinginProd') {
             steps {
-                sh 'sleep 120'
+                sh 'sleep 70'
 				sh 'wget -q "http://springboot-sample-app-prod.apps.usadkub01.cotiviti.com" -O /dev/null'
 			    sh 'if [ $? == "0" ]; then echo "OK"; else echo "Failed";fi'
             }
