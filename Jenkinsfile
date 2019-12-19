@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('BuildinDevelopment') {
             steps {
-                sh 'oc start-app codecentric/springboot-maven3-centos~https://github.com/nvosetti/springboot-sample-app  -n dev'
+                sh 'oc start-build codecentric/springboot-maven3-centos~https://github.com/nvosetti/springboot-sample-app  -n dev'
 				        sh 'oc expose service springboot-sample-app  -n dev'
             }
         }
